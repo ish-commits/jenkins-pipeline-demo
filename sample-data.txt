@@ -1,0 +1,30 @@
+Jenkins Pipeline Demo - Sample Data File
+==========================================
+
+This is a sample text file for demonstrating Git commits and Jenkins pipeline triggers.
+
+Version: 1.0
+Created: Initial version
+Last Modified: Never
+
+Instructions for Learners:
+--------------------------
+1. Modify this file to trigger Git commits
+2. Add new lines, change version numbers, or update timestamps
+3. Commit and push changes to trigger the Jenkins pipeline
+
+Sample Data:
+-----------
+Project Name: Jenkins CI/CD Demo
+Environment: Development
+Build Number: 1
+Status: Active
+
+Notes:
+------
+- This file can be modified to test Jenkins pipeline execution
+- Any changes to this file should trigger the automated pipeline
+- Use this for practicing Git workflow and CI/CD concepts
+
+========================================
+End of Sample Data File 

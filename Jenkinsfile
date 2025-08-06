@@ -6,18 +6,6 @@ pipeline {
         cron('0 2 * * 0')
     }
     
-    // Environment variables
-    environment {
-        MAVEN_HOME = tool 'Maven'
-        JAVA_HOME = tool 'JDK8'
-        PATH = "${MAVEN_HOME}/bin:${JAVA_HOME}/bin:${env.PATH}"
-    }
-    
-    tools {
-        maven 'Maven'
-        jdk 'JDK8'
-    }
-    
     stages {
         stage('Checkout') {
             steps {

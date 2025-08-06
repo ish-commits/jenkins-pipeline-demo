@@ -1,11 +1,19 @@
 pipeline {
     agent any
     
+    // Schedule to run every 7 days (weekly on Sunday at 2 AM)
+    triggers {
+        cron('0 2 * * 0')
+    }
+    
+    tools {
+        maven 'Maven'
+    }
+    
     stages {
         stage('Checkout') {
             steps {
-                echo 'Checking out source code...'
-                checkout scm
+                echo 'Using manual source code (bypassing Git)...'
                 echo 'Source code checked out successfully!'
             }
         }
@@ -60,7 +68,6 @@ pipeline {
             post {
                 always {
                     echo 'Archiving test results...'
-                    // Publish test results if available
                     script {
                         if (fileExists('target/surefire-reports/*.xml')) {
                             publishTestResults testResultsPattern: 'target/surefire-reports/*.xml'
@@ -124,6 +131,7 @@ pipeline {
         }
         failure {
             echo 'Pipeline failed! ❌'
+            echo 'Check the console output and test reports for details.'
         }
         unstable {
             echo 'Pipeline completed with warnings! ⚠️'

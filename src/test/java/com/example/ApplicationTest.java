@@ -49,7 +49,7 @@ public class ApplicationTest {
     @DisplayName("Test sum calculation with positive numbers")
     void testCalculateSumPositiveNumbers() {
         int result = application.calculateSum(10, 20);
-        assertEquals(30, result);
+        assertEquals(50, result); // INTENTIONAL FAILURE: Changed 30 to 50
     }
     
     @Test
